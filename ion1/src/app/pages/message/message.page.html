@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Message</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item color="success">
+    <ion-icon name="person-circle" slot="start" style="font-size: 50px;"></ion-icon>
+    <ion-label>
+      {{ userID }}
+    </ion-label>
+  </ion-item>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-grid>
+        <ion-row>
+          メッセージ
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    
+    <ion-row>
+      <ion-col size="9">
+        <ion-item lines="full">
+          <ion-input [(ngModel)]="newItem.message"></ion-input>
+        </ion-item>
+        <ion-text color="danger" *ngIf="newMessageIsEmpty">
+          メッセージの内容を空にすることはできません。
+        </ion-text>
+      </ion-col>
+      
+      <ion-col>
+        <ion-button (click)="createMessage()">投稿</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-card *ngFor="let item of getDisplayedMessages()">
+    <ion-card-content>
+      <ion-item lines="none" style="margin-bottom: 10px;">
+        {{ item.payload.doc.data().message }} 
+      </ion-item>
+      
+      <ion-item>
+        <ion-buttons style="display: block;">
+          <ion-button [disabled]="item.payload.doc.data().user != userID" (click)="editMessage(item.payload.doc.id)">
+            <ion-icon name="create-outline"></ion-icon>編集
+          </ion-button>
+          <ion-button [disabled]="item.payload.doc.data().user != userID" (click)="showDeleteConfirmation(item.payload.doc.id)" color="danger">
+            <ion-icon name="close-outline"></ion-icon>削除
+          </ion-button>
+        </ion-buttons>
+        <p slot="end">by {{item.payload.doc.data().user }} &nbsp;&nbsp;{{ calculateElapsedTime(item.payload.doc.data().time) }}前</p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+    <ion-button (click)="prevPage()" [disabled]="currentPage === 1">前へ</ion-button>
+    <ion-button (click)="nextPage()" [disabled]="currentPage === totalPages">次へ</ion-button>
+  </div>
+</ion-content>

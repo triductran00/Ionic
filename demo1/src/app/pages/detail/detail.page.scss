@@ -1,0 +1,55 @@
+  ion-button, ion-content {
+    --background: #6b45bc;
+  }
+  
+  ion-content {
+    position: relative;
+  }
+  
+  .detail-container {
+    background: white;
+    height: 70vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 40px 40px 0 0;
+  
+    img {
+      position: absolute;
+      max-width: 15rem;
+      top: 0px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  
+    .name-price {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 6rem;
+      margin-right: 50px;
+    }
+    
+    .button-group ion-button {
+        margin-right: 10px;
+    }
+
+    .button-group ion-button ion-icon {
+        margin-right: 5px;
+    }
+
+    h1 {
+      font-weight: bold;
+      color: black;
+    }
+
+    p {
+        color: black;
+    }
+    
+    #price {
+        color: gold;
+    }
+  }
+
+   

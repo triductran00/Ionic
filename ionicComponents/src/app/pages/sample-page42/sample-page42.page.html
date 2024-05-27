@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>samplePage42</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button id="open-toast" expand="block">Open</ion-button>
+  <p id="message">This is a toast message.</p>
+  <ion-toast trigger="open-toast" message="Please read it carefully!" [duration]="5000"></ion-toast>
+</ion-content>

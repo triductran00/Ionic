@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>{{ movie!.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <img [src]="movie.poster_path ? imageBaseUrl + '/w400' + movie.poster_path : ''">
+
+    <ion-card-header>
+      <ion-card-title>
+        {{ movie.title }}
+      </ion-card-title>
+
+      <ion-label color="primary">
+        <span *ngFor="let g of movie.genres; let isLast = last">
+          {{ g.name }}{{ !isLast ? ',' : '' }}
+        </span>
+      </ion-label>
+    </ion-card-header>
+
+    <ion-card-content>
+      <h2 style="font-size: 1.2rem;font-weight: bold;">Credits:</h2>
+      <div class="scrollable-list" style="overflow-y: scroll; max-height: 300px;">
+        <ion-list lines="full">
+          <ion-item *ngFor="let credit of creditList" detail="false">
+            <ion-avatar slot="start">
+              <img [src]="credit?.profile_path ? imageBaseUrl + '/w185' + 
+              credit.profile_path : ''">
+            </ion-avatar>
+            <ion-label>
+              <h3>{{ credit.name }}</h3>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

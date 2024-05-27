@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Upcoming Movies</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item button="" *ngFor="let item of movies" [routerLink]="[item.id]">
+      <ion-avatar slot="start">
+        <img [src]="item.poster_path? imageBaseUrl + '/w92' + item.poster_path:''">
+      </ion-avatar>
+      <ion-label>
+        {{ item.title }}
+        <p>
+          {{ item.release_date | date:"Y" }}
+        </p>
+      </ion-label>
+      <ion-badge slot="end"> {{ item.vote_average | number:'1.1-1'}} </ion-badge>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+      <ion-infinite-scroll-content loadSpinner="lines" loadingText="Fetching more content..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

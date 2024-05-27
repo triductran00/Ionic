@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <!-- <strong>Ready to create an app?</strong>
+    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p> -->
+    <h1>{{myTitle}}</h1>
+    <h3>{{mySubtitle}}</h3>
+    <a *ngIf = "showLink" [href]="courseLink">Tutorial Link</a>
+    <div *ngFor="let course of Courses">
+        <a style="text-decoration: underline;color: green;"(click)="showCourseName(course.name)">
+          {{course.name}}
+        </a>
+    </div>
+    <div style="margin-top: 10px;">
+      <label for="comment">Comment:</label>
+      <input type="text" name="comment" [(ngModel)]="comment" />
+      <p style="color: white;font-size: larger;font-weight: bolder;">{{comment}}</p>
+    </div>
+  </div>
+</ion-content>

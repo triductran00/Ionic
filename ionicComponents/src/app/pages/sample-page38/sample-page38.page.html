@@ -1,0 +1,13 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Basic Usage</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button id="open-picker">Open</ion-button>
+  <ion-picker trigger="open-picker" [columns]="pickerColumns" [buttons]="pickerButtons"></ion-picker>
+</ion-content>

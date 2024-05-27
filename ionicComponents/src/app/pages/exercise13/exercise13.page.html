@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>exercise13</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content>
+    <ion-list>
+      <ion-item *ngFor="let q of questions; let i = index">
+        <ion-label>{{ i + 1 }}. {{ q.question }}</ion-label>
+        <ion-radio-group [(ngModel)]="q.selectedOption">
+          <ion-item *ngFor="let option of q.options; let j = index">
+            <ion-label><ion-radio>{{ option }}</ion-radio></ion-label>
+          </ion-item>
+        </ion-radio-group>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="full" (click)="submitQuiz()">Submit</ion-button>
+  </ion-content>
+  
+</ion-content>
+

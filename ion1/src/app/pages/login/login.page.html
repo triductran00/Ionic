@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Log In
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-label>ユーザID（メールアドレス）</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="full">
+            <ion-input [(ngModel)]="useremail" type="email"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-label>パスワード</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-item lines="full">
+            <ion-input [(ngModel)]="userpassword" type="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="logIn()">ログイン</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+

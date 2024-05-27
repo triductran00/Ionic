@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Clickable List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item button="" detail="true" lines="full">
+      <ion-label>
+        <h3>Button Item</h3>
+        <p>Detail set to true</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item button="" detail="false" disabled="true" lines="full">
+      <ion-label>
+        <h3>Button Item</h3>
+        <p>Detail set to false</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item button="" detail="true" detail-icon="caret-forward-outline" lines="full">
+      <ion-label>
+        <h3>Button Item</h3>
+        <p>Detail set to true</p>
+        <p>Detail icon set to caret-forward-outline</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

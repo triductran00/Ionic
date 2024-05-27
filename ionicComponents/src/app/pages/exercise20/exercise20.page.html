@@ -1,0 +1,39 @@
+<!-- <body><ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Plants</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-segment [(ngModel)]="selectedSegment" (ionChange)="onSegmentChanged()" color="danger">
+    <ion-segment-button value="call">
+      <ion-label>All</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="heart">
+      <ion-label>Fruiting</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="pin">
+      <ion-label>Flowering</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="pin">
+      <ion-label>Favourite</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div *ngIf="selectedSegment === 'call'">
+    <ion-item *ngFor="let plant of plants">
+      <plant.image></plant.image>
+    </ion-item>>
+  </div>
+
+  <div *ngIf="selectedSegment === 'heart'">
+    <h1>Heart Segment</h1>
+  </div>
+
+  <div *ngIf="selectedSegment === 'pin'">
+    <h1>Pin Segment</h1>
+  </div>
+</ion-content></body> -->

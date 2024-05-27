@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Basic Usage</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-select placeholder="Favorite Color" [(ngModel)]="selectedColor">
+      <ion-select-option value="red">Red</ion-select-option>
+      <ion-select-option value="blue">Blue</ion-select-option>
+      <ion-select-option value="green">Green</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-button (click)="showSelectedColor()">Show Selected Color</ion-button>
+</ion-content>

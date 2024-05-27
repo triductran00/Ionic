@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>ionChange Event</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-checkbox (ionChange)="onCheckboxChange($event)">
+        Option 1
+      </ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-checkbox (ionChange)="onCheckboxChange($event)" value="Option2">
+        Option 2
+      </ion-checkbox>
+    </ion-item>
+  </ion-list>
+<!-- 
+  <ion-content [fullscreen]="true">
+    <ion-list>
+      <ion-item lines="full">
+        <ion-checkbox labelplacement="start">Label at the Start</ion-checkbox>
+      </ion-item>
+  
+      <ion-item lines="full">
+        <ion-checkbox labelplacement="end">Label at the End</ion-checkbox>
+      </ion-item>
+  
+      <ion-item lines="full">
+        <ion-checkbox labelplacement="fixed">Fixed Width Label</ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </ion-content> -->
+</ion-content>

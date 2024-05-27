@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Basic Usage</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar></ion-searchbar>
+  <ion-searchbar disabled="true" placeholder="Disabled"></ion-searchbar>
+  <ion-searchbar placeholder="Custom Search Icon" search-icon="search-circle"></ion-searchbar>
+  <ion-searchbar animated="true" placeholder="Animated"></ion-searchbar>
+  <ion-searchbar search-icon="search-circle" placeholder="Custom Search Icon"></ion-searchbar>
+</ion-content>

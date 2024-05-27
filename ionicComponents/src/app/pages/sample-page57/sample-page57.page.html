@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="one">
+        Tab One
+      </ion-segment-button>
+      <ion-segment-button value="two">
+        Tab Two
+      </ion-segment-button>
+    </ion-segment>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div [ngSwitch]="segment">
+    <div *ngSwitchCase="'one'">
+      <h1>Tab One Content</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div *ngSwitchCase="'two'">
+      <h1>Tab Two Content</h1>
+      <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+  </div>
+</ion-content>

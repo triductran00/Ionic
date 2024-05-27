@@ -1,0 +1,13 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Spectific Datetime</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-datetime hourValues="2,3,4" minuteValues="0,15,30,45" 
+  dayValues="5,10,15,20,25,30"></ion-datetime>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Avatar and Thumbnail List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://randomuser.me/api/portraits/women/24.jpg">
+      </ion-avatar>
+      <ion-label>
+        <h2>Jane Doe</h2>
+        <p>Project Manager</p>
+      </ion-label>
+      <ion-thumbnail slot="end">
+        <img src="https://picsum.photos/seed/picsum/50/50">
+      </ion-thumbnail>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://randomuser.me/api/portraits/men/18.jpg">
+      </ion-avatar>
+      <ion-label>
+        <h2>John Smith</h2>
+        <p>Software Developer</p>
+      </ion-label>
+      <ion-thumbnail slot="end">
+        <img src="https://picsum.photos/seed/picsum/50/50">
+      </ion-thumbnail>
+    </ion-item>
+  </ion-list>
+</ion-content>

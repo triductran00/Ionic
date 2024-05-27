@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>autoGrow &amp; rows</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-textarea placeholder="Type something here" autoGrow="true" label="Feedback" label-placement="stacked" value="This is Textarea.This is Textarea.This is Textarea.This is Textarea.">
+    </ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-textarea placeholder="Type something here" autoGrow="false" label="Feedback" label-placement="stacked" value="This is Textarea.This is Textarea.This is Textarea.This is Textarea.">
+    </ion-textarea>
+  </ion-item>
+  
+  <ion-item>
+    <ion-textarea label="Feedback" rows="5" value="This is Feedback."></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Telephone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone number"></ion-input>
+  </ion-item>
+</ion-content>

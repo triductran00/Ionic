@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>exercise15</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-input label="Pet name" justify="space-between" placeholder="Enter pet name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-select justify="space-between" interface="action-sheet" label="Pet Type">
+        <ion-select-option value="cat">Cat</ion-select-option>
+        <ion-select-option value="dog">Dog</ion-select-option>
+        <ion-select-option value="hamster">Hamster</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-select justify="space-between" interface="action-sheet" label="Pet Gender">
+        <ion-select-option value="male">Male</ion-select-option>
+        <ion-select-option value="female">Female</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item *ngFor="let pet of pets">
+      <h3> {{ pet.name }}</h3>
+      <h4> {{ pet.type }}</h4>
+      <sub> {{ pet.gender }}</sub>
+    </ion-item>
+  </ion-list>
+</ion-content>

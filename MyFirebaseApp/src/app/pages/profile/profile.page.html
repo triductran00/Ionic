@@ -1,0 +1,67 @@
+<body><ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button expand="full" (click)="SignOut()">
+        <ion-icon slot="start" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>My Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item color="success">
+    <ion-icon name="person-circle" slot="start" style="font-size: 50px;"></ion-icon>
+    <ion-label>
+      <h1>{{ userName }}</h1>
+      <p>{{ userEmail }}</p>
+    </ion-label>
+  </ion-item>
+  <ion-card>
+    <ion-card-header>
+      <ion-grid >
+        <ion-row>
+          <ion-col size="11">
+            <ion-card-title>Tutorial List</ion-card-title>
+          </ion-col>
+          <ion-col size="1">
+            <ion-icon id="open-modal" name="add-circle" class="plus-icon" color="success" style="font-size:40px;"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let item of tutorials" lines="none" style="margin-bottom: 10px;">
+          {{ item.payload.doc.data().title }} [{{ item.payload.doc.data().subject }}]
+          <ion-button slot="end" (click)="deleteTutorial(item.payload.doc.id)" color="danger">
+            Delete
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-modal trigger="open-modal" [initialBreakpoint]="0.95">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancel</ion-button>
+          </ion-buttons>
+          <ion-title>Create New Tutorial</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="createTutorial()" color="success" [disabled]="!(newItem.title &amp;&amp; newItem.subject)">Create</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-item lines="full">
+          <ion-input label="Title:" [(ngModel)]="newItem.title"></ion-input>
+        </ion-item>
+        <ion-item lines="full">
+          <ion-input label="Subject:" [(ngModel)]="newItem.subject"></ion-input>
+        </ion-item>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

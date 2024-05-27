@@ -1,0 +1,13 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Helper & Errpr Text</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-input type="email" fill="solid" label="Email" labelPlacement="floating"
+  helperText="Enter a valid email" errorText="Invalid email" ngModel email></ion-input>
+</ion-content>

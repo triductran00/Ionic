@@ -1,0 +1,23 @@
+.food-icon {
+  width: 100px;
+  height: 100px;
+  margin-left: 15%;
+}
+
+.grid-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+p {
+  white-space: normal;
+  font-size: 15px;
+  padding: 10px;
+}
+
+#price {
+  color: gold;
+}
